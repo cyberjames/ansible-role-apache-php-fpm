@@ -1,0 +1,29 @@
+galaxy_info:
+  author: Damian Lewis
+  description: Configures Apache to support PHP-FPM
+  license: BSD
+
+  min_ansible_version: 2.5
+
+  platforms:
+  - name: Debian
+    versions:
+    - wheezy
+    - jessie
+    - stretch
+    - buster
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+    - bionic
+
+  galaxy_tags:
+  - apache
+  - cgi
+  - php-fpm
+  - web
+  - webserver
+
+dependencies:
+- damianlewis.apache

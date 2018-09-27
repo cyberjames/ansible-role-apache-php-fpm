@@ -1,0 +1,17 @@
+---
+- name: Enable Apache Proxy and Fast CGI modules for use with PHP-FPM
+  apache2_module:
+    name: "{{ item }}"
+  loop: "{{ apache_php_fpm_modules }}"
+  notify: restart apache
+
+- name: Get installed PHP-FPM packages
+  shell: "dpkg -l | awk '$2 ~ /php.*-fpm/ {print $2}'"
+  register: _php_fpm_packages
+
+- name: Enable Apache PHP-FPM configuations
+  command: "a2enconf {{ item }}.conf"
+  register: _conf_enabled
+  changed_when: "'Enabling conf' in _conf_enabled.stdout"
+  loop: "{{ query('list', _php_fpm_packages.stdout) }}"
+  notify: restart apache
