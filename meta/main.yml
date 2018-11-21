@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: Apache PHP-FPM
   author: Damian Lewis
   description: Configures Apache to support PHP-FPM
   license: BSD
@@ -6,12 +7,6 @@ galaxy_info:
   min_ansible_version: 2.5
 
   platforms:
-  - name: Debian
-    versions:
-    - wheezy
-    - jessie
-    - stretch
-    - buster
   - name: Ubuntu
     versions:
     - trusty
