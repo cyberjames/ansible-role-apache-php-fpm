@@ -12,16 +12,15 @@ This role has a dependency for `damianlewis.apache`.
 
 ## Example Playbook
 ```yaml
-- hosts: app
+- hosts: server
   become: yes
-  
+
   vars:
-    apache_vhosts:
+    apache_sites:
     - hostname: example.test
       root: /var/www/html
 
-  - import_role:
-      name: damianlewis.apache
+  tasks:
   - import_role:
       name: damianlewis.apache-php-fpm
 ```
