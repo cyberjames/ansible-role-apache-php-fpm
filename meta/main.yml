@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: Apache PHP-FPM
+  role_name: apache_php_fpm
   author: Damian Lewis
   description: Configures Apache to support PHP-FPM
   license: BSD
